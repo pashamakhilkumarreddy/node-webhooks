@@ -1,0 +1,1 @@
+# django-sales-app
