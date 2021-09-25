@@ -13,3 +13,6 @@ To create a new project - `django-admin startproject <project_name>`
 To create a new app - `python manage.py startapp <app_name>`
 To write dependencies to requirements.txt - `pipenv lock -r > requirements/prod.txt`
  `pipenv lock -r --dev-only > requirements/dev.txt` for dev dependencies
+To make db migrations - `python manage.py makemigrations`
+`python manage.py migrate`
+To run the server - `python manage.py runserver`
