@@ -1,9 +1,14 @@
 {% extends "base.html" %}
 
 {% block title %}
-    Sales
+    Sales List  
 {% endblock title %}
 
 {% block content %}
-    Hola!
+    List
+    {% for sale in sales_list %}
+    {{sale}}
+    <a href="{{sale.get_absolute_url}}">{{sale.transaction_id}}</a>
+    {# <a href="{% url 'sales:detail' obj.pk %}">{{sale.transaction_id}}</a> #}
+    {% endfor %}
 {% endblock content %}

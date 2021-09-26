@@ -3,6 +3,7 @@ from products.models import Product
 from customers.models import Customer
 from profiles.models import Profile
 from django.utils import timezone
+from django.shortcuts import reverse
 from .utils import generate_code
 
 # Create your models here.
@@ -41,6 +42,9 @@ class Sale(models.Model):
 
     def __str__(self) -> str:
         return f"Sales for the amount of ${self.total_price}"
+
+    def get_absolute_url(self):
+        return reverse("sales:detail", kwargs={"pk": self.pk})
 
     def get_positions(self):
         return self.positions.all()
